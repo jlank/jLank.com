@@ -1,6 +1,0 @@
---- 
-title: Test Post
-date: 09/12/2010
-
-Once upon a time...
-
