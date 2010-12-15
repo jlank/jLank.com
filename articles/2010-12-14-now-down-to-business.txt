@@ -1,0 +1,8 @@
+--- 
+title: Now Down To Business
+date: 14/12/2010
+
+Ah.  Refreshing.  So much build up on that first post.  This blog has taken me a while to get going, and I intend to make sure it doesn't sputter out.  There are many reasons why I started this blog, I don't want to try and list them all here at once.  The main reason I started the blog is so I can keep a record of my work as I challenge myself with new projects and work through the details.  My goal is to expose myself to new technologies, programming languages, open source communities, 'hacking', and so on and so forth.  I have a bucket of side projects I've been itching to dig into for some time, that time has ended.  I can't say it will always be pretty, or fun; I hope this log of my efforts will help me learn along the way, and in turn help others to learn from my trials.
+
+
+
