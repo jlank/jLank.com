@@ -1,0 +1,10 @@
+--- 
+title: Housekeeping
+date: 14/12/2010
+
+Ok... time for some housekeeping; I need to configure this blogging platform <a href="http://www.cloudhead.io/toto">toto</a> a little bit.  I read about it on first <a href="http://www.usabilitypost.com/2010/02/06/blogging-simplified/">usability post</a> and it really piqued my interest.  It is very simple, easy to get up and running, and fast; all things I like.  The blogging application is built with Ruby, and I have it running on Heroku.  Getting this up and running has been a little lesson in DNS routing, git, and installing some things on my Ubuntu VM. 
+
+I'm going to take some time and mess with the default settings and learn how to format my posts to have proper teasers, tags, and meta info.  Catch you later.
+
+
+
