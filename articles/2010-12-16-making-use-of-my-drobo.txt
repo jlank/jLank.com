@@ -1,0 +1,15 @@
+--- 
+title: Making Use of My Drobo
+date: 16/12/2010
+
+I've had a Drobo with DroboShare for almost a year now.  Right after I bought it and threw 4TB into it I just let it sit there and gather dust.  Now that I'm getting my technical house in order it is time to tidy up.  ~
+
+I've installed dropbear, an SSH client for DroboShare, and I can now ssh into the box to access all of my files.  It is currently running the bourne shell with an embedded linux system; personally I'm used to the BASH shell.  Luckily, I installed BASH on the DroboShare, now I need to figure out how make the switch.
+
+In addition to getting my NAS figured out, I've also been gaining interest in Unix after I started reading <a href="http://www.faqs.org/docs/artu/">The Art of Unix Programming</a> by Eric Steven Raymond and <a href="http://www.over-yonder.net/~fullermd/rants/bsd4linux/01">BSD for Linux Users</a> by Matthew Fuller.  I'm thinking about locking down my LAN and having a firewall/proxy infront of my NAS and other devices for security sake.  After the recent Gawker mishap, the inner paranoid geek in me finally forced me to install LastPass and update my passwords to be more secure.  I've thought about doing it for some time, but after the slew of <a href="http://pzxc.com/use-a-password-manager-already?utm_source=feedburner&utm_medium=twitter&utm_campaign=Feed:+pzxc+(pzxc.com)">posts</a> and <a href="http://www.codinghorror.com/blog/2010/12/the-dirty-truth-about-web-passwords.html">horror stories</a> berating me to do it, I finally did it. 
+
+I bookmarked a few sites detailing how to accomplish this, there was one article about Ubuntu's <a href=https://help.ubuntu.com/8.04/serverguide/C/firewall.html">Uncomplicated Firewall</a> that looks...uncomplicated.  And there were others I found giving background on how to do it with FreeBSD.  I have a decent desktop computer I don't use that I can install either operating system on (it already has CentOS and Win 7 installed).  
+
+Once I figure this out I'm going to stop writing my blog in my VM on my laptop and hopefully have a set-up where I can ssh into my server, jot down a post from anywhere, and push it live.  In the meantime I'm going to try and get Disqus to work properly, work on my prose, and keep it real.
+
+
