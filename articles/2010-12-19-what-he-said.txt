@@ -1,0 +1,9 @@
+--- 
+title: What He Said
+date: 19/12/2010
+
+I just got home after a long day of holiday shopping and spending time with my family; I'm exhausted.  To relax, I fired up my browser to do my internet rounds and came across the top article on Hacker News.  It is titled <a href="http://www.sebastianmarshall.com/?p=432">"Conceding Defeat - The Internet is Stronger Than I Am"</a>. ~
+
+As the words scrolled up the page I felt as though I was reading a personal account of my own behavior.  It describes my exact internet behavior to a "T."  I've read many accounts such as this in the past on HN/Reddit, and I usually throw them in my <a href="http://coderoom.wordpress.com/2010/08/04/discipline-be-the-machine/">bookmarks</a> and forget about <a href="http://www.reddit.com/r/AskReddit/comments/aox80/is_anyone_else_addicted_to_information_but_never/">them</a>, thinking "I'll read that some day when I want to re-motivate myself and do something."  Tonight is different.  
+
+Fighting heavy eyelids, I fired up vim, typed 'rake new' and eeked out this post.  It might not be the most concise well though out article, but it's better than just hitting the star in Chrome and calling it a night. Hence, I have conceded defeat to the almighty internet, stopped messing around by starting this blog, and re-allocated my time with good old fashioned self-discipline; now it's time to <a href="http://ihumanable.com/blog/2010/01/22/hustle/">hustle</a>.  <br/><strong><a href="http://blog.jlank.com">Actions speak louder than words.</a></strong> <br/><br/><br/>

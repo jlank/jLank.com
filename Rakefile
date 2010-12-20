@@ -29,6 +29,7 @@ desc "Publish my blog."
 task :publish do
   toto "publishing your article(s)..."
   `git push heroku master`
+  `git push jlblog master`
 end
 
 def toto msg
