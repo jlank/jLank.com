@@ -1,0 +1,17 @@
+--- 
+title: Read Your Bookmarks
+date: 26/12/2010
+
+If you are like me, when you head home for the holidays you still check the inter-tubes like a feen.  The need for tech infotainment is exasperated by the fact that the usual flow of articles slows to a drip.  It is frustrating, leaves you hungry for more, and it happens every year.  I have come up with a solution: Read Your Bookmarks! ~
+
+It is easy to forget the wealth of knowledge contained in your bucket of links.  Articles, videos, lectures, publications; they're all there, waiting to be read, viewed, absorbed.  We all have those moments at work where you say, "I'll read this later when I have more time" and file that page away neatly for a dull day that never seems to come.  
+
+It is easy to forget how much stuff builds up.  Once you remember how much there is to slog through, it is easy to ignore the insurmountable mountain of knowledge sitting beneath the surface of your browser.  We leave it there waiting for a matrix like scenario, wherein we can plug our brains into the computer and just "know kung-fu."  For the truly lazy out there, don't worry, I'm sure someone will make an app for that in the next year or so, sit tight! 
+
+Back to reality, that isn't happening any time soon.  So when you're home, when you're bored, don't scavenge for new morsels of information, go back and read what you forgot you had. There is a wealth of knowledge you've personally curated, don't waste it!  
+
+Right now I'm continuing my reading of <a href="http://www.faqs.org/docs/artu/contrastchapter.html">The Art of Unix Programming</a>, and I'm also interspersing some <a href="http://curiousreef.com/class/structure-and-interpretation-of-comp/lesson/1/">Structure and Interpretation of Computer Programming</a>.  It has been a full year since I made a new years resolution to "learn lisp" and I'm just getting around to the beggining of that journey.
+
+Maybe my resolution this year will be to read my bookmarks before I browse the web; and cut back on what I save to my pile of links.
+
+
