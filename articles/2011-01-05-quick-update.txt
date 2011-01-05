@@ -1,0 +1,11 @@
+--- 
+title: Quick Update
+date: 05/01/2011
+
+I can't believe I haven't posted in over a week.  I guess the holidays were more time consuming than I expected, time does fly when you're having fun!  Anyways, even though I haven't posted, I have been actively reading.  There has been some interesting stuff coming out recently that I'm excited about. ~
+
+One of the really interesting things is <a href="http://www.unhosted.org/manifesto.html">Unhosted</a>.  It is a new, new to me at least, paradigme in how web applications and web security is done.  From the site "With our protocol, a website is only source code. Dynamic data is encrypted and decentralised, to per-user storage nodes. This benefits free software, as well as scalability, robustness, and online privacy."  Sounds pretty nifty, eh?  I intend to follow the progress of Unhosted (I'm in the google group) and hopefully I can participate in the evolution of the protocol.  
+
+Another book I started (hopefully I finish this one) is <a href="http://www.amazon.com/Zero-Biography-Dangerous-Charles-Seife/dp/0140296476">"Zero: The Biography of a Dangerous Idea"</a>.  It is very interesting and well written.  I recommend it to anyone interested in math, history, and the crazy Pythagoras of anchient Greece.  
+
+Finally, I've been diving into some Bash scripting.  I spent the day figuring out how to use awk to extract a security token out of an HTML page that I curl'ed; check that off my list!  Alright, enough for today.  I think I have the reading thing down, time to start coding some stuff up.  I'd like to start doing some hacky projects in JavaScript with JSApp.us.  Need to get back into my Rhino book.
