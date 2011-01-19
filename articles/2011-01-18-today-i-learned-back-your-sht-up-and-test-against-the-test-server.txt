@@ -1,0 +1,14 @@
+--- 
+title: "Today I Learned: Back your Sh*t up, and Test against the *Test* server"
+date: 18/01/2011
+
+Phew, dodged a bullet today at work.  As I was testing a few minor logging changes I made to a script, all hell broke loose.  The script went rogue, and send 400 emails to me and my co-worker.  Whoops!  What went wrong?~
+
+Well, one thing that went wrong was the configuration backup script I had wrote wasn't running nightly as I had hoped.  Luckily I had a backup from late last week, so I wasn't totally screwed if anything went really wrong.  Anyways, back your sh*t up!  And make sure the back ups are backing up.  Got it?
+
+The second thing that went wrong was a fluke, and the root of the problem still eludes me.  I was testing my logging change, and when I went to do a test commit I entered the wrong password.  No big deal, I re-entered it when prompted, but what I didn't expect was for the browser to spin non-stop.  It seemed a little odd, but I closed the tab and all was good, right? wrong.  
+
+A few minutes later, I began to receive hundreds of emails eminating from my script.  One section of it, which usually checks 3-4 URLs to see if they 404 or not began to run through every URL in my system.  I had no idea what was going on or how to stop it.  Luckily all that section does is comment out the URL if it 404's, and doesn't actually delete anything, if it did, I would still be fixing it.
+
+Finally, though I haven't tracked down the problem, a big help would have been in the form of input validation.  Yeah yeah, I check for user input, but not *my* input, because you know, I'm passing it around, so it'll be fine and dandy. Wrong again hombre.  So the three lessons I impart on you today: Do back ups, and make sure they work.  Never run new code on your live server.  Validate all user input and inter-program arguments that are passed around.  
+
