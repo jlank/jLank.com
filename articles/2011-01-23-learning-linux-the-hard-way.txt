@@ -1,0 +1,16 @@
+--- 
+title: Learning Linux the Hard Way
+date: 23/01/2011
+
+The past few days have been difficult to say the least.  Let me touch upon some of the goals I was working towards, and what was blocking me from achieving them.~
+
+
+My main goal was to set up a home sever on a desktop box I've had laying around for a while.  I already had it set up to dual boot CentOS and Win 7, and wanted to create a VM inside CentOS with Ubuntu so I could port my current configuration to it.  Since I am running VirtualBox on my laptop, I thought I could just export the VM, and import it to a VirtualBox instance running on CentOS.  Wrong, doesn't work like that.
+
+It took me a while to realize that in order to get Ubuntu running inside VirtualBox on CentOS, I'd need to compile a different kernel.  The CentOS version I installed (5.5), unbeknownst to me initially, already has a Virtual Machine Manager.  In order for that to work properly, when I installed CentOS in the first place, I installed it with a kernel compiled for Xen VM operations.  So long story short, after messing around with my OS for a while to get it to use a PAE kernel, I gave up and decided to try and use the Xen Virtual Machine Manager.
+
+That proved difficult as well.  After reading countless forums and error messages, I found out that the hardware I'm running (Pentium D 2.8Ghz) doesn't support virtual machine functionality I was trying to use.  
+
+In the end, I decided to scrap my whole system.  I'm installing Ubuntu Server 10.10, got rid of CentOS and Win 7.  If I can get VM's running in this setup, I'll put CentOS back in so I can experiment with it.  If my hardware complains again I'll have to either get a new box, or stick with one distro for my setup.
+
+All in all, I've gained a high level understanding of the different VM options on Linux.  I bookmarked a lot of good books to read, and also read <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How To Ask Questions The Smart Way</a>.  Going forward I'm going to need to reference that guide if I want to dive deeper into the FOSS community. 
