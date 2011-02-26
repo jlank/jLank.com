@@ -1,0 +1,11 @@
+--- 
+title: Adapting to RVM
+date: 26/02/2011
+
+Ughhhh... That last post was a major headache.  On my new development machine where I blog from I am doing things slightly different.~
+
+On my old VM, I ran Ruby 1.8.7 stand alone, now I'm using RVM.  What I didn't know, was that in order to use rake to spin up a new article template, I needed to prefix it with rvm e.g. $ rvm rake.  Anywho, I thought, I'll just copy a file and write a new article quick and dirty.  That didn't work.  
+
+I ended up pushing the article manually to git and heroku because rake publish wasn't working.  Then when the article linking didn't match up due to the fact that my title and document title didn't match up, I had to revert.  In the end I learned how to take a step back with git, and revert a commit.  In the end I think I'm better for the mix up.
+
+Anywho, time to try $ rvm rake publish for the first time from here.  Wish me luck.
