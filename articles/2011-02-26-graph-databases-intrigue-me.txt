@@ -1,6 +1,6 @@
 --- 
 title: Graph Databases Intrigue Me
-date: 25/02/2011
+date: 26/02/2011
 
 Last night I went to the <a href="http://sunlightfoundation.com/">Sunlight Foundation</a> for a semantic web meet-up.  The night's topic was linked data and a demo was given by <a href="http://www.twitter.com/Skud">Kirrily Robert</a> of <a href="http://freebase.com/">Freebase</a> on Freebase's platform.~
 
@@ -10,6 +10,6 @@ At this very moment, I am in the middle of reading 10 different articles/white p
 
 I'm losing my train of thought, but if you're interested at all in graph databases, check out <a href="http://neo4j.org">neo4j</a>, this <a href="http://www.infoq.com/articles/graph-nosql-neo4j">infoq article</a>, and this compare/contrast on <a href="http://stackoverflow.com/questions/1189911/non-relational-database-design">stackoverflow</a>.  This will get you on the right track to learning potential applications graph databases would be best suited for.
 
-  Going forward more and more linked data will begin to creep into our lives, especially since Freebase was acquired by Google.  In the other corner, you have Apple's acquisition of <a href="http://semanticweb.com/what-does-siris-acquisition-by-apple-mean-and-where-might-sri-innovations-next-lead_b598">Siri</a>.  It will be interesting to see how these two initiatives towards a more linked web will play out; the former contender champions open data and a view source mentality, the latter... well we all know about the walled iGarden and everything that goes along with that.   
+  Going forward more and more linked data will begin to creep into our lives, especially since Freebase was acquired by Google.  In the other corner, you have Apple's acquisition of <a href="http://semanticweb.com/what-does-siris-acquisition-by-apple-mean-and-where-might-sri-innovations-next-lead_b598">Siri</a>.  It will be interesting to see how these two initiatives towards a more linked web will play out; the former contender champions open data and a view source mentality, the latter... well we all know about the walled iGarden and everything that goes along with that.
 
 
