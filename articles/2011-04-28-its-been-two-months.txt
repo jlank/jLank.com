@@ -1,0 +1,15 @@
+--- 
+title: "It's been Two Months... "
+date: 28/04/2011
+
+
+Well, the bad news is I haven't really been keeping up with this blog recently.  The good news is that I've been learning a lot in the interim :). ~
+
+To start I've been diving into git more.  I read an entire book on it!  Yay me.  If you want a good read on the subject, read <a href="http://progit.org">Pro Git</a>, many thanks to my co-worker Daniel for sending that my way (amongst other readings). I've also continued my reading on Javascript and DB's.  In order for me to test out of a pre-req for school I need to plow through a 10 year old "Modern Database Management" text book.  Woof.  It's actually not half bad though; and as I read it in tandem with a free online book about CouchDB, it is fun to see where things once were and where they are headed.
+
+Another initiative of mine has been to pursuade my co-workers to start blogging.  This is a new idea of mine, but I think it will be nice to get some ideas flowing between us on any topic really.  So yeah, I'm calling you guys out if you are reading this.  Got something to say about it? 
+
+In other news I've finally set up my home network and VM's to my liking.  I've managed to get a few instances of Ubuntu Server 10.10 up and spinning; I'm writing to you from one of them right now.  I've also had a brush with some gnarley problems trying to get Cygwin and PHP to play nice on a Windows XP box.  The short of the story is that it didn't work, but I came up with another, more appealing solution that I think I'll write about in my next post.  Hopefully it will get some good SEO for "Cygwin Apache PHP FML!!!"... 
+
+Anywho signing off m'here; time to get some reading done.
+
