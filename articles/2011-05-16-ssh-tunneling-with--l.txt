@@ -1,0 +1,28 @@
+--- 
+title: SSH Tunneling with -L
+date: 16/05/2011
+
+Well hello.. this is my first blog post from my new iPad.. I ssh'd into my
+server using Prompt, hopped onto  my blogging/projects VM, fired up VIM, and
+away we go.. tonight I want to share a nugget of information that took me the
+better part of a week to figure out: how to ssh tunnel using -L.~
+
+So to be honest, I'm new at living on the CLI, but I love it.. recently my
+co-worker Daniel showed me how to forward a remote webserver to my localhost
+using ssh; pretty badass IMO. The syntax is simple: ssh -L
+localport:localhost:remoteport remoteserver.
+
+Let me explain this in a bit more detail. 
+
+this is useful for local development
+
+typing on ipad sucks in vim
+
+forwarding ports to get around security measures and firewalls
+
+set up next post talking about my local vm and cygwin
+
+
+
+
+
