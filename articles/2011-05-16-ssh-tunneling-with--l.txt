@@ -3,7 +3,7 @@ title: SSH Tunneling with -L
 date: 16/05/2011
 
 Well hello.. this is my first blog post from my new iPad.. I ssh'd into my
-server using Prompt, hopped onto  my blogging/projects VM, fired up VIM, and
+server using Prompt, hopped onto my blogging/projects VM, typed rake new, fired up VIM, and
 away we go.. tonight I want to share a nugget of information that took me the
 better part of a week to figure out: how to ssh tunnel using -L.~
 
@@ -12,9 +12,29 @@ co-worker Daniel showed me how to forward a remote webserver to my localhost
 using ssh; pretty badass IMO. The syntax is simple: ssh -L
 localport:localhost:remoteport remoteserver.
 
-Let me explain this in a bit more detail. 
+Let me explain this in a bit more detail.
 
-this is useful for local development
+So say you're running a webserver/service on a local or remote VM and you want
+to debug it locally since the VM is headless.  Use ssh -L.  My dev set up is a
+headless CentOS VM, which is configured to be as similar to my production VM as
+possible.  In order for me to run my code and test things out, I need to
+view it locally in my browser, with ssh -L I can.  
+
+Breaking it out it looks like this:
+
+localhost = my desktop
+remoteserver = a VM running inside VirtualBox (on my desktop)
+localport: 80
+remoteport: 80
+
+so typing ssh -f -N -L 80:localhost:80 dev-vm will do the following:
+
+-f = fork process into background
+-N = don't run any commands remotely (w/o this -f wil complain)
+-L = bind the remote and local port to a secure channel
+
+
+
 
 typing on ipad sucks in vim
 
