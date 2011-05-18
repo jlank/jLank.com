@@ -6,42 +6,49 @@ Well hello.. this is my first blog post from my new iPad.. I ssh'd into my
 server using Prompt, hopped onto my blogging/projects VM, typed rake new, fired up VIM, and
 away we go.. tonight I want to share a nugget of information that took me the
 better part of a week to figure out: how to ssh tunnel using -L.~
+<br/>
 
 So to be honest, I'm new at living on the CLI, but I love it.  Recently my
 co-worker Daniel showed me how to forward a remote webserver to my localhost
-using ssh; pretty badass and useful IMO. The syntax is simple: <code>ssh -L
-localport:localhost:remoteport remoteserver</code>.
+using ssh; pretty badass and useful IMO. The syntax is simple:
+<p><code>ssh -L localport:localhost:remoteport remoteserver</code>.</p>
+<br/>
 
 Let me explain this in a bit more detail.
+<br/>
 
 Say you're running a webserver/service on a local or remote VM and you want
 to debug it locally since the VM is headless and you want to see your work in a
 browser.  Use ssh -L.  My dev machine set up is a headless CentOS VM, which is
 configured to be as similar to my production VM as possible.  In order for me 
 to run my code and test things out, I need to view it locally in my browser, 
-with ssh -L I can.  
+with ssh -L I can.
+<br/>
 
 Breaking it out it looks like this:
 <ul>
 <li>localhost = my windows desktop</li>
-<li>lemoteserver = a VM running inside VirtualBox (on my desktop)</li>
-<li>localport: 80</li>
-<li>lemoteport: 80</li>
+<li>remote server = a VM running inside VirtualBox (on my desktop)</li>
+<li>local port: 80</li>
+<li>remote port: 80</li>
 </ul>
 so typing <code>ssh -f -N -L 80:localhost:80 dev-vm</code> will do the following:
 
--f = fork process into background
--N = don't run any commands remotely (w/o this -f will complain)
--L = bind the remote and local port to a secure channel
-
-Lets go one step deeper and talk about security concerns we can subert/enhance
+<ul>
+<li>-f = fork process into backgroundi</li>
+<li>-N = don't run any commands remotely (w/o this -f will complain)</li>
+<li>-L = bind the remote and local port to a secure channel</li>
+</ul>
+Lets go one step deeper and talk about security concerns we can subvert/enhance
 with the use of ssh -L.  
+<br/>
 
 Now it is great that I can see a webpage, but in my little application I'm doing
 a few API calls on to a server on ports that aren't open on my firewall.  Oh me
 oh my, how will I ever get anything done?  I could call up my hosting provider 
 and tell them to open up a port here and there, but at home I have a dynamic IP 
 and I don't want to start poking holes in the firewall rules.  
+<br/>
 
 A better option is to tunnel through my remote VM at my hosting provider, which
 has access to the ports I need, and access the services I need from there.  Now
@@ -49,6 +56,7 @@ you may be thinking, "well you really shouldn't subvert the security measures
 put in place by blocking those ports" that is a valid point.  However, I believe
 it is better to use only what you need to get the job done.  One way in - one way
 out, through the single, secure remote VM at the hosting provider. 
+<br/>
 
 To illustrate a working example, let's take this scenario:  script.sh is making
 two calls to an API on Server A, one call goes to port 8000, the other 8443.  To your
@@ -57,7 +65,7 @@ two ports are also blocked from any traffic not coming from sanctioned IPs.
 Luckily, your work server, Server B is allowed to interface with Server A, and
 you can ssh into Server B.  Problem solved, see ASCII art below for explaination.   
 
-<code>ssh -L 8000:serverA:8000 serverB 8443:serverA:8443 serverB</code>
+<p><code>ssh -f -N -L 8000:serverA:8000 serverB 8443:serverA:8443 serverB</code></p>
 
 <ul>
 <li>L = localhost</li>
@@ -65,9 +73,9 @@ you can ssh into Server B.  Problem solved, see ASCII art below for explaination
 <li>B = serverB</li>
 </ul>
 
-L ---8000/8443---> B ---8000/8443---> A
+L ---8000/8443---> B ---8000/8443---> A<br/>
  <---8000/8443--- B <---8000/8443--- A
-
+<br/>
 Now, there is one nuance which is what hung me up for a bit.  Notice in my first
 example I was doing <code>80:localhost:80 dev-vm</code>.  That bound a remote web server to
 my localhost's port 80.  This situation is tunneling traffic on my localhost's
@@ -75,18 +83,22 @@ my localhost's port 80.  This situation is tunneling traffic on my localhost's
 blocked.  So, what are really saying is, any request locally to Server A
 on port 8000 or 8443 must go through Server B.  To get this to work properly, we
 need to modify our /etc/hosts file.
+<br/>
 
 In this final step, we will tell our hosts file to take any request to Server A,
 and forward it to our localhost (127.0.0.1).  So in your hosts file, add or
 modify the following line:
-
-<code>127.0.0.1       localhost     serverA</code>
+<p><code>127.0.0.1       localhost</code></p>
+to:
+<p><code>127.0.0.1       localhost     serverA</code></p>
 
 This will route all requests to Server A through the correct ports on Server B.
+<br/>
 
 That's all for now, next post I'll go into my local VM set up in some detail.
 It may be helpful for those of you out there that are forced to use Windows at
 work and want to replicate your production environment locally.
+<br/>
 
 P.S. I switched over to my laptop...typing on the iPad isn't so great when you
 want to keep speed.  Maybe it will be better if I do it with my wireless
