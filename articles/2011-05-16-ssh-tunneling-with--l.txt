@@ -65,7 +65,7 @@ two ports are also blocked from any traffic not coming from sanctioned IPs.
 Luckily, your work server, Server B is allowed to interface with Server A, and
 you can ssh into Server B.  Problem solved, see ASCII art below for explaination.   
 
-<p><code>ssh -f -N -L 8000:serverA:8000 serverB 8443:serverA:8443 serverB</code></p>
+<p><code>ssh -f -N -L 8000:serverA:8000 -L 8443:serverA:8443 serverB</code></p>
 
 <ul>
 <li>L = localhost</li>
@@ -103,3 +103,7 @@ work and want to replicate your production environment locally.
 P.S. I switched over to my laptop...typing on the iPad isn't so great when you
 want to keep speed.  Maybe it will be better if I do it with my wireless
 keyboard.
+
+
+UPDATE: fixed syntax on compound ssh command - replaced 'serverB' in the
+middle with -L.
