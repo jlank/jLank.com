@@ -7,10 +7,10 @@ server using Prompt, hopped onto my blogging/projects VM, typed rake new, fired 
 away we go.. tonight I want to share a nugget of information that took me the
 better part of a week to figure out: how to ssh tunnel using -L.~
 
-So to be honest, I'm new at living on the CLI, but I love it.. recently my
+So to be honest, I'm new at living on the CLI, but I love it.  Recently my
 co-worker Daniel showed me how to forward a remote webserver to my localhost
-using ssh; pretty badass and useful IMO. The syntax is simple: ssh -L
-localport:localhost:remoteport remoteserver.
+using ssh; pretty badass and useful IMO. The syntax is simple: <code>ssh -L
+localport:localhost:remoteport remoteserver</code>.
 
 Let me explain this in a bit more detail.
 
@@ -22,13 +22,13 @@ to run my code and test things out, I need to view it locally in my browser,
 with ssh -L I can.  
 
 Breaking it out it looks like this:
-
-localhost = my windows desktop
-remoteserver = a VM running inside VirtualBox (on my desktop)
-localport: 80
-remoteport: 80
-
-so typing ssh -f -N -L 80:localhost:80 dev-vm will do the following:
+<ul>
+<li>localhost = my windows desktop</li>
+<li>lemoteserver = a VM running inside VirtualBox (on my desktop)</li>
+<li>localport: 80</li>
+<li>lemoteport: 80</li>
+</ul>
+so typing <code>ssh -f -N -L 80:localhost:80 dev-vm</code> will do the following:
 
 -f = fork process into background
 -N = don't run any commands remotely (w/o this -f will complain)
@@ -50,6 +50,44 @@ put in place by blocking those ports" that is a valid point.  However, I believe
 it is better to use only what you need to get the job done.  One way in - one way
 out, through the single, secure remote VM at the hosting provider. 
 
+To illustrate a working example, let's take this scenario:  script.sh is making
+two calls to an API on Server A, one call goes to port 8000, the other 8443.  To your
+dismay, both of these ports are blocked on your local network.  Further, these
+two ports are also blocked from any traffic not coming from sanctioned IPs.
+Luckily, your work server, Server B is allowed to interface with Server A, and
+you can ssh into Server B.  Problem solved, see ASCII art below for explaination.   
+
+<code>ssh -L 8000:serverA:8000 serverB 8443:serverA:8443 serverB</code>
+
+<ul>
+<li>L = localhost</li>
+<li>A = serverA</li>
+<li>B = serverB</li>
+</ul>
+
+L ---8000/8443---> B ---8000/8443---> A
+ <---8000/8443--- B <---8000/8443--- A
+
+Now, there is one nuance which is what hung me up for a bit.  Notice in my first
+example I was doing <code>80:localhost:80 dev-vm</code>.  That bound a remote web server to
+my localhost's port 80.  This situation is tunneling traffic on my localhost's
+8000/8443 ports to another 'liberated' machine, which does not have the ports
+blocked.  So, what are really saying is, any request locally to Server A
+on port 8000 or 8443 must go through Server B.  To get this to work properly, we
+need to modify our /etc/hosts file.
+
+In this final step, we will tell our hosts file to take any request to Server A,
+and forward it to our localhost (127.0.0.1).  So in your hosts file, add or
+modify the following line:
+
+<code>127.0.0.1       localhost     serverA</code>
+
+This will route all requests to Server A through the correct ports on Server B.
+
 That's all for now, next post I'll go into my local VM set up in some detail.
 It may be helpful for those of you out there that are forced to use Windows at
 work and want to replicate your production environment locally.
+
+P.S. I switched over to my laptop...typing on the iPad isn't so great when you
+want to keep speed.  Maybe it will be better if I do it with my wireless
+keyboard.
