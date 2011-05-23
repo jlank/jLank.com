@@ -1,0 +1,16 @@
+--- 
+title: Site Facelift
+date: 22/05/2011
+
+I have just updated my blog with some window-dressing, social media links, and  css.  Jump inside to see what else changed.~
+
+So I haven't really modified this blog from it's original theme toto, until today.  Some of the things I added are the two new CSS3 buttons to the left which link out to my Facebook and Twitter accounts.  
+
+I also added a robots.txt and humans.txt file to the site.  In the humans.txt file I shout out some of the tools I'm using for this site, like jquery, CSS3 buttons,  this blogging platform, and more.
+
+Structurally, I've sprinkled some 960.gs  framework on here, in addition to some HTML5 semantic mark up.  
+
+There's always more to do, but today I have laid some foundation.
+
+
+
