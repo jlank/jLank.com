@@ -1,0 +1,59 @@
+--- 
+title: Making a VLAN
+date: 14/08/2011
+
+Tomorrow I will have a brand new internet connection, sorry Clear, but your 4G
+WiMax isn't cutting it in my new english basement!  With >400 ms response
+times, writing this post on my new Linode VM is slightly painful.  After the
+jump I'll detail what exactly I have in mind. ~
+
+So, Comcast is a pain in the you know what.  For whatever reason, they could
+not hook up my new apartment because my upstairs neighbors already have
+service with them.  Therefore we got Direct TV with a Clear 4G WiMax hotspot.
+It may be the bricks, moisture, low level of my apartment, whatever, but the
+connection speed hovers around 750Kbps download, and ping latency is a joke.
+
+This lead me to broker a deal with my neighbors to pump up their
+service with Comcast to a 105Mbps plan.  Tomorrow I will run a CAT6 Ethernet
+cable from a switch into my new Dual Band Buffalo router, and be done with
+it.  If you are thinking of building a VLAN, below are the parts I purchased,
+and I'll detail the steps to setting it up.
+
+A quick side note, since both my neighbor and I work from home from time to
+time, we needed to make sure our network traffic was secure and partitioned. 
+ With this in mind, I remembered the utility of VLANs from my
+ Telecomm/Enterprise Networks course (thanks Dr. Spina) and decided this was
+ the best option.  Creating a VLAN will effectively secure our connections
+ from occupying the samesubnet, and will cut down on broadcast messages
+ (shouldn't really be an issue with such a small network).  
+
+<ul>
+<li>$52 - GS150e Switch, 5-port - Newegg.com</li>
+<li>$11 - CAT6 Network Ethernet Cable - monoprice.com </li>
+<li>$32 - CAT6 RJ54 Jacks & Boots/Crimping Tool/Testing Kit - Amazon.com</li>
+<li>$90 - Buffalo WZR-HP-AG300H AirStation (Dual Band goodness) Newegg.com</li>
+</ul>
+
+And here is a ghetto topology I threw together in google docs, didn't have Visio handy at the time:
+<img src="http://i.imgur.com/zMxF1.jpg" alt="VLAN Topology" title="VLAN Topology" style="width: 75%"/>
+
+The fun parts of this project for me are configuring my Buffalo AirStation as it is 
+a very feature full device.  Another fun thing is manufactuing the CAT6 cable and 
+running it through the wall, I went with 100 feet, so I hope I don't mess up too much and
+lose my slack!  On this note, my coworker Matt cautioned me on the high attenuation rate of Ethernet
+cables as they approach 100 feet, however he was mistaken.  Ethernet attenuation starts
+to creep in at 100 meters (330 feet), and I'm not certain, but I think CAT6 UTP may have
+a greater distance (150 meters?), I have to check my notes. I'm more worried
+about making a bad endpoint and getting cross talk which would degrade my
+throughput considerably.
+
+The final unknown in the project (as I have already manufactured cables and configured routers)
+is the VLAN tagging at the switch.  I've yet to experience this process, but I can't
+imagine it beeing more complicated than port forwarding on a router.  We shall see.
+  The great thing about this switch is it is cheap because it
+is an unmanaged switch that comes with software you install on your computer.
+
+That's all for now, excuse the typos if there are any, it is hard to type with
+all this lag!  Tomorrow I will get some of that fast internet and never look back. Initial 
+speed tests were showing around 90Mbps down and 10Mbps up :) this will be my fastest home
+connection to date.
