@@ -1,0 +1,53 @@
+--- 
+title: "Lessons learned: Theory vs Practice"
+date: 01/09/2011
+
+There is a big difference between knowing about something, knowing how to use
+that something, and knowing how to use that something well.  Many people deal
+with this trichotomy on a daily basis at work. If you actually take the step of
+trying to make/do/understand something, you'll quickly realize how
+little you really know.  ~
+
+If you read my last post about creating a VLAN you may be under the impression
+that it went swimmingly and I've been using my new VLAN whilst sipping on
+cocktails all the day long.  Unfortunately that is not the case.  Knowing
+about VLANs != knowing how to build one.  Let me take a moment to give a
+post-mortem of my efforts.
+
+My first assumption about constructing a VLAN with just a switch and 2 routers
+was misguided in the context of my original topology.  It took some
+troubleshooting but I came to realize that Modem -> Switch -> (2) Routers
+still only gives you 1 internal LAN IP from the Modem.  For there to be two
+subnets I need a router to do NAT and potentially DHCP.
+
+Secondly, I did not understand the relatively new technology space surrounding
+the awesome DD-WRT firmware for routers.  I took a trip to Starbucks with my
+new Cisco router with the idea that in 30 or so minutes I'd have new firmware
+on the device.  After reading the infamous "peacock" thread on the forums, I
+walked home and put my reading glasses on.  Assumption = ass out of me and...
+me.
+
+After I finally flashed the router, I found it difficult to find the proper
+configuration settings online.  Most technologies have forums upon forums of
+examples and tutorials, so it isn't too difficult to find something just like
+what you need.  I thought I found that in this case, but I was again mistaken.
+I configured my VLAN according to some forum that was *kind of like what I
+needed.  Being slightly hung over and groggy, I copy/pasted away and ended up
+disabling half of the ports on the router.
+
+A hard reset later left me with a clean slate.  Unfortunately the router
+decided to run at 100% CPU while I was gone, causing the router to crash.  My
+neighbor needing internet took it out of the mix and plugged directly into the
+modem himself.  Understandable move, this process has not been without it's
+hiccups.  
+
+Now I'm left with a switch, a router and a list of known unknowns to read
+about.  My plan is to hit the reset button on this whole project and figure 
+this thing out once and for all.  
+
+The moral of the story is just because you read it in a book, doesn't mean
+ you can 'just do it' even if you are technically savvy.  Practice
+ begets experience, and experience is worth more than words in a
+ book/forum/blog saying something is possible, make it a reality and live in
+ that world.  
+
