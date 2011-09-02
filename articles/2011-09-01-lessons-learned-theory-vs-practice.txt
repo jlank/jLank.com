@@ -1,5 +1,5 @@
 --- 
-title: "Lessons learned: Theory vs Practice"
+title: "Lessons Learned: Theory vs Practice"
 date: 01/09/2011
 
 There is a big difference between knowing about something, knowing how to use
