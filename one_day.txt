@@ -1,0 +1,35 @@
+Today I learned first hand a practical advantage of writing asynchronous code. 
+The use-case is simple, but it illustrates a powerful feature.  My task is to download around
+450 web-pages as fast as possible.  I already have a synchonous script (bash) that does this
+so I have something to benchmark against.
+
+To write my new script I've chosen to try out coffeescript.  Simple and easy,
+it worked great with a list of 4 sample sites.  I then went full throttle and threw
+all 450 sites at it, which caused my program to crash.  I got "Error: EMFILE, Too
+many open files 'file100'", which means the OS is saying I've opened too many files
+at once; shut down by the file system police.
+
+This is a problem I've yet to encounter as my synchonous script dutifully goes one link
+after another opening a file, writing to it, closing it.  Therein lays the key difference 
+with async code, which is what makes it fast:  it doesn't wait. If you want to write
+450 files, it will try to do just that all at once and it is up to you to pull on
+the reigns to slow things down for your ulimit.
+
+After a 'npm install async' to limit my function calls to 3 
+concurrent calls at a time, my script executed in spectacular fashion.
+It ran 6.5 times faster, around 7 seconds vs 45 seconds.  It was pretty neat
+to see data stream into the files as data became available instead of going one 
+at a time.  
+
+An analogy: it is like you pull out 450 cups from the cabinet, three at a time, 
+and begin to pour water into each cup under a single stream by shuffling the three
+cups back and forth under the stream.  As one becomes full, the next cup is grabbed and
+put on the flight, in and out as they become full.  This is in contrast to the old method
+where you pull one cup from the cabinet, fill it up, give it to someone, grab the next, 
+fill it up, give it away, and so on.  If you print out the file you're wrinting to as 
+the script runs, you'll see this is exactly how it works; a little will get written from 
+site A then from site B if data comes over the wire, back to A, perhaps a packet of 
+C comes in and gets written to the file descriptor for C.  This means there is more overhead,
+to manage all of the open file descriptors, but it is in exchange for constant data streaming 
+over the wire into your file, there is no waiting.  That is awesome. 
+
