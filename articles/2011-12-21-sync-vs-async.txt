@@ -2,7 +2,7 @@
 title: Sync vs Async
 date: 21/12/2011
 
-Once upon a time...
+Sync vs Async
 
 Today I learned first hand a practical advantage of writing asynchronous code.
 The use-case is simple, but it illustrates a powerful feature.  My task is to download around
