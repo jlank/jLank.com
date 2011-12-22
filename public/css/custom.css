@@ -76,7 +76,8 @@ button.skip:active {
   outline: none !important;
   -moz-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 #fff;
   -webkit-box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 #fff;
-  box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 #fff;
+  /*box-shadow: inset 0 0 20px 0 #1d2845, 0 1px 0 #fff;*/
+  box-shadow: inset 0 0 20px 0 #4f80ff, 0 1px 0 #fff;
   cursor: pointer;
 }
 
@@ -112,7 +113,7 @@ button.github:hover {
 }
 
 button.github:active {
-  box-shadow: inset 0 0 20px 0 #b7b7b7, 0 1px 0 #fff;
+  box-shadow: inset 0 0 20px 0 #e0e0e0, 0 1px 0 #fff;
 }
 
 body {
