@@ -25,7 +25,7 @@
             <a <%= ' onclick="return false;"' if @path == 'index' %> href="/">Home</a>
         </li>
         <li <%= ' class="active"' if @path == 'books-reading' || @path == 'books-read' || @path == 'books-to-read' %>>
-            <a <%= ' onclick="return false"' if @path == 'books-reading' %> href="/books-reading/">Books</a>
+            <a <%= ' onclick="return false"' if @path == 'books-reading' || @path == 'books-read' || @path == 'books-to-read' %> href="/books-reading/">Books</a>
         </li>
         <li <%= ' class="active"' if @path == 'archives' %>>
             <a <%= ' onclick="return false"' if @path == 'archives' %> href="/archives/">Archives</a>
