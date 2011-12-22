@@ -93,18 +93,26 @@ button.twitter:hover {
   cursor: pointer;
 }
 
+button.twitter:active {
+  box-shadow: inset 0 0 20px 0 #42dff7, 0 1px 0 #fff;
+}
+
 button.github {
     background: #11090a;
-    background: -moz-linear-gradient(top, #A9D2FF 0%, #73a5dd 50%, #4099FF 50%, #358aec 100%);
-    background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #A9D2FF), color-stop(0.5, #73a5dd), color-stop(0.5, #4099FF), color-stop(1, #11090a));
+    background: -moz-linear-gradient(top, #9E9C9C 0%, #686565 50%, #686565 50%, #353132 100%);
+    background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #9E9C9C), color-stop(0.5, #686565), color-stop(0.5, #353132), color-stop(1, #11090A));
     font-family: 'Cambo', serif;
 }
 
 button.github:hover {
   background: #5e96d6;
-  background: -moz-linear-gradient(top, #9fc7f2 0%, #6b9bd1 50%, #5e96d6 50%, #367fd3 100%);
-  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #9fc7f2), color-stop(0.5, #6b9bd1), color-stop(0.5, #5e96d6), color-stop(1, #367fd3));
+  background: -moz-linear-gradient(top, #9E9C9C 0%, #686565 50%, #686565 50%, #353132 100%);
+  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #9E9C9C), color-stop(0.5, #686565), color-stop(0.5, #353132), color-stop(1, #11090A));
   cursor: pointer;
+}
+
+button.twitter:active {
+  box-shadow: inset 0 0 20px 0 #b7b7b7, 0 1px 0 #fff;
 }
 
 body {
