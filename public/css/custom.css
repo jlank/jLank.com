@@ -10,11 +10,11 @@ banner {
     word-spacing: 0em;
     line-height: 1.2;
 }
-#first_dot {
+banner#first_dot {
   color: #4CBF6D;
 }
 
-#second_dot {
+banner#second_dot {
   color: #5482F7;
 }
 banner ul {
