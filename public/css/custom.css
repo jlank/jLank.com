@@ -92,3 +92,12 @@ button.twitter:hover {
   background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #9fc7f2), color-stop(0.5, #6b9bd1), color-stop(0.5, #5e96d6), color-stop(1, #367fd3));
   cursor: pointer;
 }
+
+body {
+  background: url(http://a2.twimg.com/profile_images/1689847847/image.jpg) no-repeat;
+  background-size: 15%;
+  background-position-x: 20px;
+}
+#banner_text {
+  margin-left: 100px;
+}
