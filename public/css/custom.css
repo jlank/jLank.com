@@ -106,12 +106,12 @@ button.github {
 
 button.github:hover {
   background: #5e96d6;
-  background: -moz-linear-gradient(top, #9E9C9C 0%, #686565 50%, #686565 50%, #353132 100%);
-  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #9E9C9C), color-stop(0.5, #686565), color-stop(0.5, #353132), color-stop(1, #11090A));
+  background: -moz-linear-gradient(top, #C1C1C1 0%, #9B9B9B 50%, #848383 50%, #3D3D3D 100%);
+  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #C1C1C1), color-stop(0.5, #9B9B9B), color-stop(0.5, #848383), color-stop(1, #3D3D3D));
   cursor: pointer;
 }
 
-button.twitter:active {
+button.github:active {
   box-shadow: inset 0 0 20px 0 #b7b7b7, 0 1px 0 #fff;
 }
 
