@@ -24,7 +24,7 @@
         <li <%= ' class="active"' if @path == 'index' %>>
             <a <%= ' onclick="return false;"' if @path == 'index' %> href="/">Home</a>
         </li>
-        <li <%= ' class="active"' if @path == 'books' %>>
+        <li <%= ' class="active"' if @path == 'books-reading books-read books-to-read' %>>
             <a <%= ' onclick="return false"' if @path == 'books' %> href="/books-reading/">Books</a>
         </li>
         <li <%= ' class="active"' if @path == 'archives' %>>
