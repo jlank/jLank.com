@@ -93,6 +93,20 @@ button.twitter:hover {
   cursor: pointer;
 }
 
+button.github {
+    background: #11090a;
+    background: -moz-linear-gradient(top, #A9D2FF 0%, #73a5dd 50%, #4099FF 50%, #358aec 100%);
+    background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #A9D2FF), color-stop(0.5, #73a5dd), color-stop(0.5, #4099FF), color-stop(1, #11090a));
+    font-family: 'Cambo', serif;
+}
+
+button.github:hover {
+  background: #5e96d6;
+  background: -moz-linear-gradient(top, #9fc7f2 0%, #6b9bd1 50%, #5e96d6 50%, #367fd3 100%);
+  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #9fc7f2), color-stop(0.5, #6b9bd1), color-stop(0.5, #5e96d6), color-stop(1, #367fd3));
+  cursor: pointer;
+}
+
 body {
   background: url(http://a2.twimg.com/profile_images/1689847847/image.jpg) no-repeat;
   background-size: 15%;
