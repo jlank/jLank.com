@@ -1,0 +1,12 @@
+--- 
+title: New Books Page
+date: 24/12/2011
+
+For all my loyal readers out there (hi mom! ... mom?) you may notice I've finally added books to my books link.~
+
+I used my goodreads account to populate this section with a widget, it works OK, but isn't dynamic. Also in the middle of implementing my pages the internet cut and I haven't had time to link to the other sections /books-read/ and /books-to-read/.  Since it is Christmas eve I'm not going to work on that now, Kara would kill me, but I'm going to get to it next.
+
+That's all, Merry Christmas!
+
+<img src="/images/MerryChristmas1.gif"/>
+ 
