@@ -1,0 +1,23 @@
+--- 
+title: New Desk Layout
+date: 27/12/2011
+
+I got sick of sitting at my desk at work and at home, so I changed things up.~
+
+At work I have a nice rolley chair, at home I have a craptastic chair and a rolley
+yoga ball.  I'm sick of sitting, so I recently decided to stand.  This has afforded me 
+a few wins.  First, I'm not sitting all the time, win #1.  Second, since I have my keyboard
+propped up by a box, and my monitors on books and a box, there is no room for my mouse; it stays 
+below on the desk.  This is the perfect height where I can just reach it and click a link or 
+exposé my desktop.
+
+I have only been doing this for a day or so, but I can immediately see benefits in
+productivity.  I no longer get click happy and waste time on reddit or HN, as the majority
+of those activities involve browsing with the mouse.  This also means that I spend more time
+on the keyboard working my muscle memory in VIM.  Finally, when I get tired of standing (with good 
+posture), I can have a seat, tilt my monitor down, and do some of that browsing.  Then when I'm 
+ready to do things again, I stand and assume the 'working' position.
+
+Now I'm tempted to get one of those adjustable geek desks... must. resist. urge.
+
+Goodnight.
