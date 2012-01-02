@@ -18,6 +18,7 @@ toto = Toto::Server.new do
   # set [:setting], [value]
   # 
   set :author,    "jLank"                               # blog author
+  set :url,       "blog.jlank.com"                               # blog url
   set :title,     "my.brain > &1" #Dir.pwd.split('/').last                   # site title
   set :root,      "index"                                   # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles
