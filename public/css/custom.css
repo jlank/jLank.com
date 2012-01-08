@@ -123,10 +123,11 @@ button.github:active {
   box-shadow: inset 0 0 20px 0 #e0e0e0, 0 1px 0 #fff;
 }
 
-body {
-  background: url(http://a2.twimg.com/profile_images/1689847847/image.jpg) no-repeat;
+banner ul {
+  background: url(images/jlank.png) no-repeat;
   background-size: 15%;
   background-position-x: 20px;
+  background-position-y: -35px;
 }
 #banner_text {
   margin-left: 140px;
