@@ -12,4 +12,4 @@ Work wise, things are going well.  Today I implemented a chaching system using r
 
 Anywho just wanted to give that quick update, time for bed.
 
-<a href="/data/user-agent-injections.pdf">User Agent Injections Journal Review</a>
+<a href="/css/user-agent-injections.pdf">User Agent Injections Journal Review</a>
