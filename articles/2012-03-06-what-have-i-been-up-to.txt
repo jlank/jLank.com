@@ -1,0 +1,15 @@
+--- 
+title: What Have I Been Up To?
+date: 06/03/2012
+
+Hello internet peoples, how have you been?  I've been quite busy myself; this semester I'm taking two grad level courses: Relational Databases and Information System Security.  I've also found some spare time to hack on socket.io, backbone.js, lots of node.js, getting my couchdb chops up, and today I implemented a nice little cache using redis & the redback module.  What fun!~
+
+If you want to see what I did go to dev.jlank.com:3000, that's a project I threw together in a couple of days using backbonejs, couchdb, and django (first time using it - it's ok, I prefer node.js).   I also made a little chat program with socket.io and express, I think I took it down though.  If anyone wants to see it I can put it up.  
+
+My classes are going well, got a 98 on my ISS paper which I wrote a critique on a security journal talking about user-agent injections.  I'll link to it below.  I also had a midterm for DB's, and I have one for ISS this thursday which I've been studying a lot for.  The material is very high level and repetitive, so I need to drill it into my brain.
+
+Work wise, things are going well.  Today I implemented a chaching system using redis and redback, it was super easy and really cool seeing your page request times drop from ~700ms to ~100-200ms.  I'm not caching the headers/footers of the page yet so response times should go down after I do that, right now I'm only caching the five http req's I need from a couchdb backend.  
+
+Anywho just wanted to give that quick update, time for bed.
+
+<a href="/data/user-agent-injections.pdf">User Agent Injections Journal Review</a>
