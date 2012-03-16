@@ -1,0 +1,23 @@
+--- 
+title: iTunes Syncing Woes
+date: 15/03/2012
+
+So I haven't sync'ed my iPad/iPhone to my mac since December because every time I plugged it in I'd get the BBOD (beach ball of death).  Tonight I finally had it and went into detective mode.  Hopefully this post will serve as a guide to those lost in the dark as I was for more than 3 months.
+
+Basically it boils down to some sort of corruption in the "SyncServices" database.  I couldn't find ANYTHING online that helped me figure this out, except for this post: https://discussions.apple.com/thread/2132675?start=0&tstart=0.  WillGonz figured it out, you need to delete the *~/Library/Application Support/SyncServices/Local* cache.  Great.  One problem, that thread is from 2009 and things have moved, I don't have a /User/Lank/Library directory (visible to me at least - thanks apple).  
+
+Luckily I'm a |337 haxor and located all the directories on my toqutor (tim & eric's billion dollar movie reference anyone? no? ... ?) that were named SyncServices.  This little command does the trick: sudo find / -type d -name "SyncServices" 2> /dev/null.  This lead me to a handful of directories, the last one being closest to the one in the forum thread.  After cd'ing there, I moved the Local directory out to a safe place,  plugged in my iPad and bingo - syncing again just like the good old days.  
+
+Now for a little back track and SEO magic for those out there with the same problem.  The way I figured out this had to do with SyncServices is I opened Activity Monitor, started iTunes, and sorted everything by PID.  After it seemed like no more processes were popping in and out of existence, I plugged my iPad in and watched what got fired up. I noticed a child process of iTunes named AppleMobileDeviceHelper.  After inspecting what files it was touching, I saw one was a log file, oh joy!  It was located at /Users/Lank/Library/Logs/Sync/syncservices.log; tail -f {log file} then showed me this glorious error:
+
+<br/>
+2012-03-15 22:19:41:755|SyncServer|4299|0x109316e60|Logging|Info| Logging initialized, engine version 673.3 : log level 3
+2012-03-15 22:19:41:836|SyncServer|4299|0x109316e60|SQLite|Error| Detected out-of-space situation: 0 (Undefined error: 0). 434877399040 bytes free in Lank. 
+2012-03-15 22:19:42:863|SystemUIServer|3191|0x7f9230ccfd00|Mingler|Error| failed to connect to the server: NSInvalidReceivePortException connection went invalid while waiting for a reply
+2012-03-15 22:19:42:878|AppleMobileDeviceHelper|3299|0x3114d0|Mingler|Error| failed to connect to the server: NSInvalidReceivePortException connection went invalid while waiting for a reply because a mach port died
+2012-03-15 22:19:42:930|Dock|3189|0x7fb1db4d4310|Mingler|Error| failed to connect to the server: NSInvalidReceivePortException connection went invalid while waiting for a reply
+<br/>
+
+After a little google-fu I found the forum thread and went to work in the terminal to reach the magically hidden /User/Lank/Library directory.  All said and done it was a pretty easy fix, I just figured a software update would fix the issue but after a few new iTunes update and 5.1 release of iOS, I got fed up.  Hope this helps someone!
+
+
