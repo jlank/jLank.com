@@ -1,0 +1,25 @@
+--- 
+title: Adding COPY to nano
+date: 04/07/2012
+
+
+intro:
+Hello internet.  How are you, good? Glad to hear it.  As always it has been some time since I've updated my blog, howevert this time I come bearing gifts.  This post serves as the final step in contributing a pull request to [dscape/nano](https://github.com/dscape/nano) that implements [CouchDB's HTTP COPY](http://wiki.apache.org/couchdb/HTTP_Document_API#COPY) method.  As I have made it a personal goal to contribute to open source projects this year, this is a step in the right direction.~
+
+![nano](http://i.imgur.com/4igDS.jpg?1 "Roar!")
+
+what i did:
+The enhancement to nano that I wrote does nothing more, and nothing less than add the non-standard HTTP COPY method to nano's API.  That's kind of a lie, I also added tests for the method, and removed some trailing whitespaces from nano.js (because I have OCD like that).  The code change totaled 14 lines seen below:
+
+<script src="https://gist.github.com/3045404.js"> </script>
+
+what it's good for:
+Ok, great so I added this thing, what does it do, how does it do it, and what is it good for?  What it does is allows you to create a copy of a CouchDB document either as a brand new document, or as an overwrite of an existing document.  This is achieved is by providing the `copy` method a source document id and a target document id, and an optional options object (alliteration much?).  If the target doesn't exist, it is created and the document is copied.  If it does exist, a HEAD request is made to get the latest _rev for that document, and it is used to copy over the latest version of that document.  The `copy` method I wrote encapsulates this logic for you, and also lets you pass an optional overwrite parameter before the callback to change the default overwrite preference from false to true.  If you set it to true you won't get a 409 document conflict error from couch if you try to update an already existing document.  Be careful though, if you start overwriting documents you didn't intend you, you may find youself digging through old document rev's.
+
+So... what is it good for?  The reason I needed this functionality in the first place is because in my work with CouchDB I generate a lot of large view indexes to support a web application.  If I change anything in my views it takes hours to regenerate them.  To avoid kicking off the View Group Indexer on the live site, I kick them off in a separate design document.  Once all the views have been activated, I use HTTP COPY to cut them over to the live version of my application.  Is this the best way to do it?  I'm not sure, but it works.  If anyone has a better suggestion I'm open to hear it.
+
+why i did it:
+Beyond the business need for adding this method, I really did this to make a small contribution to an open source project that I use and enjoy using on a daily basis.  I think nano is a great tool, and was happy to add to it.  While I could have just used `relax` (which is currently holding me over) to accomplish this functionality and keep the sloc count lower, Nuno [encouraged me](https://github.com/dscape/nano/issues/88) to code up the PR, document my changes, and write this post.  Since I'm always trying to learn more, improve my coding skills, and expose myself to new projects, I took the bait and did it up.  It took me a while to finish due to my n00b-ness, some external factors, and vacation, however next time I'll be able to use what I've learned in order to get things done faster.
+
+what i learned:
+This brings me to my final section, what I learned!  Beyond learning my way around nano's source, I learned about npm's 'script' abilities, and how they can be used to run tests.  I like this approach because I don't need to have a testing framework in my path to run the tests.  I also learned about [flatiron/nock](https://github.com/flatiron/nock) which is super cool, didn't even know things like that existed.  I'm going to have to integrate it into my workflow as I bolster my testing efforts.
