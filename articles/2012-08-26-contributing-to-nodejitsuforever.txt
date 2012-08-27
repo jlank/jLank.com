@@ -1,0 +1,29 @@
+--- 
+title: Contributing to nodejitsu/forever
+date: 26/08/2012
+
+<iframe width="610" height="458" src="http://www.youtube.com/embed/A3b9gOtQoq4" frameborder="0" allowfullscreen></iframe>
+
+>Whether you're a brother
+>Or whether you're a mother,
+>You're stayin' alive, stayin' alive.
+
+I use [nodejitsu/forever](https://github.com/nodejitsu/forever) on a daily basis to keep my long-running processes alive.  It works great, has handy options, and is simpler than setting up init.d scripts.~
+
+The one thing that I found to be lacking with forever is the inability to stream logs to your terminal as they are updated.  After getting tired of figuring out which log file in `~/.forever/*.log` I needed to `tail -f`, I decided to add the `-f` parameter to forever (after some encouragement from [@pfiled](http://twitter.com/pfiled)).  There was already an open feature-request for this issue ([#205](https://github.com/nodejitsu/forever/issues/205)), so I went ahead and wrote up a pull request.  To clarify my work I decided to write this post.
+
+The first thing I noticed when digging into the code was that the ability to specify the `-n` parameter on the command line was not available, even though it is mentioned in the README.  This parameter is used to limit the number of lines that are displayed out of your logs (the default is 100).  It is pretty useful so I decided to add the `-n`/`--number` option, in addition to the `-f`/`--fifo` option that I initially set out to do.
+
+To add the option to stream the logs to stdout, I need to update the function signature to accept a generic options object instead of just a `length` parameter.
+<script src="https://gist.github.com/3484641.js?file=gistfile1.js"></script>
+As forever currently stands (before my changes), it does an `exec` to `tail`, gets a chunk of log output per process (there can be one or many depending on how you name your processes and specify which logs you want), and sends back 100 lines of log data.  At the top of each chunk is a reference to which process it comes from.  It looks like this (two separate processes running out.js):
+<script src="https://gist.github.com/3484684.js?file=forever logs"></script>
+This approach works well if you have a static amount of lines, can buffer them, then spit them back out in order all at once.  However, if you want to stream them, lines could come at any interval from any process (which may have the same name as a different process).  Therefore I needed to come up with an intuitive and easy way to identify which lines came from which process.
+
+The solution I came up with was to not buffer the data and call one big callback at the end, but instead call the callback whenever a new chunk of data comes back from the child process' stdout.  Additionally, to keep things straight as to which line came from which process, I decided to prepend each line with the process name and process id.  It now looks like this:
+<script src="https://gist.github.com/3484732.js?file=foreverlogs"></script>
+You can see I specified the `-n 5` and `-f`, which in turn prints out the last 5 lines of the first process (`pid 9161`), and then the last 5 of the second process (also called `out.js` - `pid 9194`).  It then starts to stream each successive line as it comes from either of the processes.  I like this approach because you can easily pipe this stream to `grep` and filter out different processes or errors.  For example if you're running a lot of `out.js` processes which are responding to hypothetical http requests, and a certain percentage of your processes are throwing errors and others aren't, you can do something like `forever logs out.js -n 1 -f | grep '{ errno: 500 }' to see which `pid`'s are guilty.
+
+To wrap up I updated the README with the signature change and new cli options, updated the tests and wrote this blog post.  I also got the bee gees stuck in my head for probably the next week and made friends with this guy.
+
+![Staying Alive](http://aznbadger.files.wordpress.com/2010/05/mens-1970s-john-travolta-saturday-night-fever-costume.jpg)
