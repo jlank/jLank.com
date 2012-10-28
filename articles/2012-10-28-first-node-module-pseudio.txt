@@ -1,7 +1,8 @@
 ---
-title: First Node Module
+title: ! 'First Node Module: Pseudio'
 date: 28/10/2012
 
+<iframe width="610" height="458" src="http://www.youtube.com/embed/r0qBaBb1Y-U" frameborder="0" allowfullscreen></iframe>
 I just published my first node.js module, I named it pseudio because it strips pseudo classes and elements off of CSS selectors, and the word pseudo sounds like sussudio.~
 
 Check out the [npm module page](https://npmjs.org/package/pseudio), or find it on [github](https://github.com/jlank/pseudio).  If you're wondering why anyone would ever need something like this, the answer is they probably wont.  However, I am going to be using it to strip any pseudo (class|element) from css selectors so I can enhance the [`css-slap-chop` module](https://github.com/brianleroux/css-slap-chop).  I'm adding @media query support to the module, and during this process I came across the need to strip out pseudo elements so I can see if a selector is being utilized on a page or not.
