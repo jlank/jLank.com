@@ -6,16 +6,24 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="google-site-verification" content="qnL4udi3oM0TZ2VRYUiys9_RNLaazO_FKh02zjN4zt4" />
     <title><%= title %></title>
+
+    <script src="http://jlank.caterhero.jit.su/dist/caterhero-widget.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://jlank.caterhero.jit.su/css/caterHero.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8"> $(function(){ $("a[rel^='prettyPhoto']").prettyPhoto(); }); </script>
+
   </head>
   <body>
+    <a href="http://jlank.caterhero.jit.su/?iframe=true&width=80%&height=80%" rel="prettyPhoto[iframes]" title="Cater Hero">Cater Hero</a>
     <banner class="container_12">
-        <ul> 
+        <ul>
            <li><a href="/"><h1 id="banner_text">blog<span id="first_dot">.</span>jlank<span id="second_dot">.</span>com</hi></a></li>
-        </ul>  
+        </ul>
     </banner>
+
 
     <section class="container_12">
         <div class="clear"></div>
@@ -33,19 +41,19 @@
         <li <%= ' class="active"' if @path == 'about' %>>
             <a <%= ' onclick="return false"' if @path == 'about' %> href="/about/">About</a>
         </li>
-      </ul>   
-      <ul> 
+      </ul>
+      <ul>
       <p><button class="skip github" title="github.com/jlank"
       onclick="window.open('http://github.com/jlank')">g</button></p>
       <p><button class="skip twitter" title="twitter.com/jlank"
       onclick="window.open('http://twitter.com/jlank')">t</button></p>
-      <p><button class="skip facebook" title="facebook.com/jlank" 
+      <p><button class="skip facebook" title="facebook.com/jlank"
       onclick="window.open('http://facebook.com/jlank')">f</button></p>
       </ul>
     </nav>
     <section class="grid_10 main_content">
         <section class="grid_8">
-            <%= yield %> 
+            <%= yield %>
         </section>
     </section>
     </section>
@@ -54,17 +62,17 @@
     </footer>
     <link href='http://fonts.googleapis.com/css?family=Cardo|VT323:regular' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
-    
+
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-6138452-3']);
       _gaq.push(['_trackPageview']);
-    
+
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    
+
     </script>
   </body>
 </html>
