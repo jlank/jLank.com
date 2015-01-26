@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.2.2)
+    daemons (1.1.9)
+    eventmachine (1.0.4)
+    rack (1.6.0)
+    rack-rewrite (1.5.1)
+    rdiscount (2.1.7.1)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
+    toto (0.4.9)
+      builder
+      rack
+      rdiscount
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  builder
+  rack-rewrite
+  rdiscount
+  thin (~> 1.1)
+  toto

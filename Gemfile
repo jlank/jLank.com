@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'thin',  '~>1.1'
+gem 'builder'
+gem 'rdiscount'
+gem 'toto'
+gem 'rack-rewrite'
