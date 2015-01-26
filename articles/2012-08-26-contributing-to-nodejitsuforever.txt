@@ -2,7 +2,7 @@
 title: Contributing to nodejitsu/forever
 date: 26/08/2012
 
-<iframe width="610" height="458" src="http://www.youtube.com/embed/A3b9gOtQoq4" frameborder="0" allowfullscreen></iframe>
+<iframe width="610" height="458" src="https://www.youtube.com/embed/A3b9gOtQoq4" frameborder="0" allowfullscreen></iframe>
 
 >Whether you're a brother
 >Or whether you're a mother,
